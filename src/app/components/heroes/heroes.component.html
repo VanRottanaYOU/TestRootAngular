@@ -1,0 +1,10 @@
+<ul>
+  <li  *ngFor="let hero of listeHeroes| async">
+    <a [routerLink]="['/hero',hero.id]">{{hero.id}}{{hero.name}}</a>
+    <button type="button" class="" [routerLink]="['/hero',hero.id,'modif']">Modifier Hero</button>
+  </li>
+</ul>
+<button type="button" class="" [routerLink]="['/hero','ajout']">Creer Hero</button>
+
+
+

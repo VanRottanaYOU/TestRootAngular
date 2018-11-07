@@ -1,0 +1,30 @@
+<h1> Fiche du Hero : </h1>
+
+<div *ngIf="modifboolean">
+    <p *ngFor="let hero of Heroes |async">
+        n° : {{hero.id}} <br />
+        name : {{hero.name}} <br />
+        adresse : {{hero.addresses[0]['street']}} {{hero.addresses[0]['city']}}{{hero.addresses[0]['state']}}
+        {{hero.addresses[0]['zip']}}
+        <br />
+    </p>
+</div>
+
+<div *ngIf="!modifboolean">
+    hellllllllllllo
+    <p *ngFor="let hero of Heroes |async">
+        n° : {{hero.id}} <br />
+        name : {{hero.name}} <br />
+        adresse : {{hero.addresses[0]['street']}} {{hero.addresses[0]['city']}}{{hero.addresses[0]['state']}}
+        {{hero.addresses[0]['zip']}}
+        <br />
+        <input class="" type="submit" (click)="modifier(hero)" value="Modifier">
+    </p>
+    <div>
+        <div class="formulaire">
+            <p><label>Id</label><input [(ngModel)]="id" value="id"></p>
+            <p><label>Nom</label> <input [(ngModel)]="name" value="name"></p>
+            <p><label>Addresse</label><input [(ngModel)]="adresse" value="adresse"></p>
+        </div>
+    </div>
+</div>
