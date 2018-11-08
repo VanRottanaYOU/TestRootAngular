@@ -81,8 +81,15 @@
   "Hero": [
     {
       "id": 1,
-      "name": "dfgfdgd",
-      "addresses": "fgdfgdfg"
+      "name": "van",
+      "addresses": [
+        {
+          "street": "blabla",
+          "city": "lille",
+          "state": "unganda",
+          "zip": "999"
+        }
+      ]
     },
     {
       "id": 2,

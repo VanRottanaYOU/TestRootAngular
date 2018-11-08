@@ -11,20 +11,20 @@
 </div>
 
 <div *ngIf="!modifboolean">
-    hellllllllllllo
-    <p *ngFor="let hero of Heroes |async">
+    <div *ngFor="let hero of Heroes |async">
         n° : {{hero.id}} <br />
         name : {{hero.name}} <br />
-        adresse : {{hero.addresses[0]['street']}} {{hero.addresses[0]['city']}}{{hero.addresses[0]['state']}}
+        adresse : {{hero.addresses[0]['street']}} {{hero.addresses[0]['city']}} {{hero.addresses[0]['state']}}
         {{hero.addresses[0]['zip']}}
         <br />
-        <input class="" type="submit" (click)="modifier(hero)" value="Modifier">
-    </p>
-    <div>
+        <input class="button btn-primary" type="submit" (click)="modifier(hero)" value="Modifier">
         <div class="formulaire">
-            <p><label>Id</label><input [(ngModel)]="id" value="id"></p>
-            <p><label>Nom</label> <input [(ngModel)]="name" value="name"></p>
-            <p><label>Addresse</label><input [(ngModel)]="adresse" value="adresse"></p>
+            <p><label>Id</label><input [(ngModel)]="id"></p>
+            <p><label>Nom</label> <input [(ngModel)]="name"></p>
+            <p><label>street</label><input [(ngModel)]="street"></p>
+            <p><label>city</label><input [(ngModel)]="city"></p>
+            <p><label>state</label><input [(ngModel)]="state"></p>
+            <p><label>zip</label><input [(ngModel)]="zip"></p>
         </div>
     </div>
 </div>

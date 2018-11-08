@@ -21,7 +21,11 @@ export class DetailsheroesComponent implements OnInit {
 
   private nom :string;
   private name :string;
-  private adresse : Address[];
+  private adresse : Address[]=[];
+  private street = '';
+  private city   = '';
+  private state  = '';
+  private zip    = '';
 
   constructor(
     private service: ServiceGenService<Hero>, private route: ActivatedRoute) { }
@@ -64,6 +68,8 @@ export class DetailsheroesComponent implements OnInit {
     console.log(hero)
     this.id =hero.id;
     hero.name=this.name;
+    let adresse = new Address(this.street, this.city, this.state,this.zip)
+    this.adresse[this.adresse.length]=adresse
     hero.addresses=this.adresse;
    
     this.service.putT(hero,name,this.id); 
